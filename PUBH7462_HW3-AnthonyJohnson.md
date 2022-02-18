@@ -276,8 +276,8 @@ gt_table3.4 %>%
 
 <img src="PUBH7462_HW3-AnthonyJohnson_files/figure-gfm/unnamed-chunk-10-1.png" width="90%" style="display: block; margin: auto;" />
 
-![](./figures/Colorful_aisle_table.png)
-
 The aisles in the table are ordered by how many products are in their
 respective top fives. Within the aisle we also ordered the products by
 their totals and displayed the top 5.
+
+Made two tables because the one did not have any color.
