@@ -164,7 +164,7 @@ aisle_names <- instacart.df %>%
 ```
 
 ``` r
-instacart.df %>%
+(gt_table3.4 <- instacart.df %>%
   mutate(aisle = str_to_title(aisle), aisle = factor(aisle)) %>%
   filter(aisle %in% aisle_names$aisle) %>% #Filter to only have the top 5 aisles
   group_by(aisle) %>%
@@ -180,7 +180,7 @@ instacart.df %>%
     colors = scales::col_numeric(
       palette = c("white", "green3"), 
       domain  = c(810, 18726))) %>% #Color the highest numbers in green
-  gt::cols_label("product_name" = "Aisle and Items", "n" = "# of Items") %>%
+  gt::cols_label("product_name" = "Aisle and Items", "n" = "# of Items")) %>%
   as_raw_html()
 ```
 
@@ -267,6 +267,16 @@ instacart.df %>%
   
   
 </table>
+
+``` r
+library(webshot)
+gt_table3.4 %>%
+  gtsave("./figures/Colorful_aisle_table.png")
+```
+
+<img src="PUBH7462_HW3-AnthonyJohnson_files/figure-gfm/unnamed-chunk-10-1.png" width="90%" style="display: block; margin: auto;" />
+
+![](./figures/Colorful_aisle_table.png)
 
 The aisles in the table are ordered by how many products are in their
 respective top fives. Within the aisle we also ordered the products by
